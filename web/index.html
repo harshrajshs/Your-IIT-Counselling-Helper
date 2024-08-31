@@ -1,0 +1,423 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - IITAnalytics</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="http://d3js.org/topojson.v3.min.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=DM+Serif+Display&family=Hurricane&family=Mukta:wght@200;800&family=Noto+Serif+Display&family=Parisienne&family=Tenor+Sans&display=swap"
+    rel="stylesheet">
+</head>
+<style>
+  html {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+
+  html::-webkit-scrollbar {
+    display: inline;
+    padding: 1px;
+  }
+
+  html::-webkit-scrollbar-thumb {
+    background-color: rgb(172, 172, 172);
+    padding: 1px;
+  }
+</style>
+
+<body>
+  <div>
+    <!-- <img class="bg" src="skybluebg.png" alt=""> -->
+    <!-- header -->
+    <header class="header"><img src="analytics.png"></img>
+      <h1>IITAnalytics</h1>
+    </header>
+
+    <!-- computer image -->
+    <img class="computer" src="computer.png" alt="" data-tilt data-tilt-max="15" data-tilt-reverse="true">
+    <!-- background svg -->
+    <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#cbbdf7"></stop>
+          <stop offset="100%" stop-color="rgb(150, 199, 249)"></stop>
+        </linearGradient>
+      </defs>
+      <path class="path" fill-opacity="1"
+        d="M0,64L80,74.7C160,85,320,107,480,144C640,181,800,235,960,234.7C1120,235,1280,181,1360,154.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+        fill="url(#gradient)"></path>
+    </svg>
+
+    <!-- Typing animation content -->
+    <div>
+      <p id="para"></p>
+    </div>
+
+
+
+
+    <!--  icon stash -->
+    <div class="icons">
+      <img class="iconimg" src="icons/analysis.png"></img>
+      <img class="iconimg" src="icons/analytic.png"></img>
+      <img class="iconimg" src="icons/analytics%20(1).png"></img>
+      <img class="iconimg" src="icons/dashboard.png"></img>
+      <img class="iconimg" src="icons/data-analytics.png"></img>
+      <img class="iconimg" src="icons/presentation.png"></img>
+    </div>
+    <!-- JS to expel random icon out of the corner -->
+    <script>
+      const icons = document.querySelectorAll('.iconimg');
+      const box = document.querySelector('.computer');
+
+
+      function getRandomIcon() {
+        return icons[Math.floor(Math.random() * icons.length)];
+      }
+
+
+      box.addEventListener('mouseover', (e) => {
+        const { left, top, width, height } = box.getBoundingClientRect();
+        const x = e.clientX - left;
+        const y = e.clientY - top;
+
+        if (x < width / 2 && y >= height / 2) {
+          const icon = getRandomIcon();
+          icon.style.transform = 'translate(300px, -450px)';
+          icon.style.opacity = 0;
+          setTimeout(() => {
+            icon.style.transform = 'translate(0,0)';
+            icon.style.opacity = 1;
+          }, 3000);
+        } else {
+          const icon = getRandomIcon();
+          icon.style.transform = 'translate(-560px, -250px)';
+          icon.style.opacity = 0;
+          setTimeout(() => {
+            icon.style.transform = 'translate(0,0)';
+          }, 3000);
+          setTimeout(() => {
+            icon.style.opacity = 1;
+          }, 8000);
+        }
+      });
+    </script>
+
+
+    <!-- Dot svg -->
+    <svg class="dot" height="100" width="100">
+      <circle cx="50" cy="50" r="10" fill="#0065b3" />
+    </svg>
+
+    <svg class="dottwo" height="100" width="100">
+      <circle cx="50" cy="50" r="10" fill="skyblue" />
+    </svg>
+
+
+    <h3 class="subheading" data-aos="zoom-in-left">Everyone knows IITs are<br> best institutes in whole Indian
+      Nation.<br> Why not find out the perfect one that suits you ?</h3>
+  </div>
+
+  <!-- Topic one   -->
+  <div class="topicone">
+    <h1 data-aos="fade-right" class="lineone">Let them compete against themselves first.</h1>
+    <h1 data-aos="fade-left" class="linetwo">The statistics of NIRF and QS World Rankings of Top 10 Institutes.</h1>
+    <br><br>
+    <div id="rankings">
+      <table>
+        <tr>
+          <th>S.No</th>
+          <th>Name</th>
+          <th>NIRF Ranking</th>
+          <th>NIRF Score</th>
+          <th>QS World Ranking</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>IIT Madras</td>
+          <td>1</td>
+          <td>90.04</td>
+          <td>250</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>IIT Delhi</td>
+          <td>2</td>
+          <td>88.12</td>
+          <td>174</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>IIT Bombay</td>
+          <td>3</td>
+          <td>83.96</td>
+          <td>172</td>
+        </tr>
+
+        <tr>
+          <td>4</td>
+          <td>IIT Kanpur</td>
+          <td>4</td>
+          <td>82.56</td>
+          <td>264</td>
+        </tr>
+
+        <tr>
+          <td>5</td>
+          <td>IIT Kharagpur</td>
+          <td>5</td>
+          <td>78.89</td>
+          <td>270</td>
+        </tr>
+
+        <tr>
+          <td>6</td>
+          <td>IIT Roorkee</td>
+          <td>6</td>
+          <td>76.70</td>
+          <td>369</td>
+        </tr>
+
+        <tr>
+          <td>7</td>
+          <td>IIT Guwahati</td>
+          <td>7</td>
+          <td>72.98</td>
+          <td>384</td>
+        </tr>
+
+        <tr>
+          <td>8</td>
+          <td>IIT Hyderabad</td>
+          <td>9</td>
+          <td>68.03</td>
+          <td>581-590</td>
+        </tr>
+
+        <tr>
+          <td>9</td>
+          <td>IIT Varanasi(BHU)</td>
+          <td>13</td>
+          <td>63.51</td>
+          <td>651-700</td>
+        </tr>
+
+        <tr>
+          <td>10</td>
+          <td>IISM Dhanbad</td>
+          <td>14</td>
+          <td>63.50</td>
+          <td>1001-1200</td>
+        </tr>
+      </table>
+
+      <svg id="india" width="550" height="542"></svg>
+      <script>
+
+        // Define the map projection
+        const projection = d3.geoMercator().center([82, 22]).scale(900).translate([250, 300]);
+
+        // Define the path generator
+        const path = d3.geoPath().projection(projection);
+
+        // Create an SVG element
+        const svg = d3.select("#india");
+
+        // Load the GeoJSON data for India
+        d3.json("states_india.json").then(function (india) {
+
+
+
+          // Draw the map
+          svg
+            .append("g")
+            .attr("class", "states")
+            .selectAll("path")
+            .data(india.features)
+            .enter()
+            .append("path")
+            .attr("d", path)
+            .style("fill", "#a2dea3;")
+            .style("stroke", "#222222")
+            .style("stroke-width", 0.5)
+            ;
+
+          // Define the IIT locations
+          const iits = [
+            { name: "IIT Bombay", lon: 72.9049, lat: 19.076, nirf: 3 },
+            { name: "IIT Delhi", lon: 77.2197, lat: 28.6328, nirf: 2 },
+            { name: "IIT Madras", lon: 80.2314, lat: 12.9908, nirf: 1 },
+            { name: "IIT Kanpur", lon: 80.2329, lat: 26.5095, nirf: 4 },
+            { name: "IIT Kharagpur", lon: 87.3215, lat: 22.3140, nirf: 5 },
+            { name: "IIT Guwahati", lon: 91.7529, lat: 26.1445, nirf: 7 },
+            { name: "IIT Roorkee", lon: 77.8910, lat: 29.8668, nirf: 6 },
+            { name: "IIT Hyderabad", lon: 78.3405, lat: 17.4947, nirf: 8 },
+            { name: "IIT Gandhinagar", lon: 72.5142, lat: 23.2156, nirf: 16 },
+            { name: "IIT Ropar", lon: 76.5862, lat: 30.9785, nirf: 9 },
+            { name: "IIT Patna", lon: 85.1499, lat: 25.5941, nirf: 23 },
+            { name: "IIT Bhubaneswar", lon: 85.8130, lat: 20.2961, nirf: 22 },
+            { name: "IIT Mandi", lon: 77.3149, lat: 31.7055, nirf: 12 },
+            { name: "IIT Jodhpur", lon: 73.0209, lat: 26.2389, nirf: 50 },
+            { name: "IIT Indore", lon: 75.8538, lat: 22.4991, nirf: 10 },
+            { name: "IIT Varanasi", lon: 83.0040, lat: 25.2677, nirf: 11 },
+            { name: "IIT Palakkad", lon: 76.6557, lat: 10.8327, nirf: 54 },
+            { name: "IIT Tirupati", lon: 79.1605, lat: 13.6311, nirf: 56 },
+            { name: "IIT Dhanbad", lon: 86.4220, lat: 23.8143, nirf: 15 },
+            { name: "IIT Bhilai", lon: 81.6882, lat: 21.1924, nirf: 51 },
+            { name: "IIT Goa", lon: 73.9224, lat: 15.2993, nirf: 30 },
+            { name: "IIT Jammu", lon: 74.8570, lat: 32.6782, nirf: 80 },
+            { name: "IIT Dharwad", lon: 75.0247, lat: 15.4775, nirf: 31 }
+          ];
+
+
+
+          // Draw markers for IIT locations
+          const markers = svg
+            .append("g")
+            .attr("class", "iits")
+            .selectAll("circle")
+            .data(iits)
+            .enter()
+            .append("circle")
+            .attr("class", "iit-marker")
+            .attr("cx", function (d) {
+              return projection([d.lon, d.lat])[0];
+            })
+            .attr("cy", function (d) {
+              return projection([d.lon, d.lat])[1];
+            })
+            .attr("r", 4)
+            .on("mouseover", function (d) {
+
+              // Transition the marker size on hover
+              d3.select(this)
+                .transition()
+                .duration(0.001)
+                .attr("r", 6);
+            })
+            .on("mouseout", function () {
+
+              // Transition the marker size on mouseout
+              d3.select(this)
+                .transition()
+                .duration(0.001)
+                .attr("r", 4);
+            })
+            .append("title")
+            .html(function (d) {
+              return '<div style=" color: black; background-color: white;">' + d.name + '\n' + '<br>NIRF : ' + d.nirf + '</div>';
+            });
+
+
+
+        });
+      </script>
+
+      <div style="font-family: Helvetica, sans-serif;">
+        <p style="color : black; position : absolute; bottom : 12%; left : 5%; margin: 0px;">Bump into more insights
+          here
+          :
+        </p>
+        <a style="color : rgb(33, 103, 216); position : absolute; bottom : 9%; left : 5%; text-decoration: none; font-size: 1rem;"
+          href=""><img style="width : 16px;" src="../link.png"></img>
+          NIRF Rankings</a>
+        <a style="color : rgb(33, 103, 216); position : absolute; bottom : 6%; left : 5%; text-decoration: none; font-size: 1rem;"
+          href=""><img style="width : 16px;" src="../link.png"></img>QS
+          World Rankings</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Topic 2 : -->
+  <div class="topictwo">
+    <div>
+      <p>Want to check possible branches optable for a rank ?</p>
+      <a href="rankanalyser.html">CHECK OUT OUR RANK ANALYSER</a>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- Topic 3 : Female Category Analysis-->
+  <div class="topicthree">
+    <div
+      style="border: 5px solid rgb(172, 172, 172); height : 60%; width : 90%; position: absolute; right: 5%; top : 2%;">
+      <h1>Ladies ! We got you . Women 🍵</h1>
+      <p>Check out how we analyse female category ranks</p>
+      <a href="femalescatter.php">Explore</a>
+    </div>
+  </div>
+
+  <!-- Topic 4 ( Parallax ) -->
+  <div class="topicfour">
+    <h1>Everything, everywhere, all at once !</h1>
+    <p>Slide in to check out how OR and CR vary as per your desire.</p>
+    <a href="">Take me there</a>
+  </div>
+
+  <!-- Topic 5 :  -->
+  <div class="topicfive">
+    <h1>Competition here , New v/s Old</h1>
+    <p>Check out how New vs Old IITs vary with each other</p>
+    <a href="new_vs_old.html" target="_blank">Let's Go !</a>
+  </div>
+
+  <!-- Flow in branches -->
+  <div class="topicsix">
+    <h1>The flow of students in years</h1>
+    <div id="flowshower"></div>
+  </div>
+
+
+  <!-- Topic : Outliers-->
+  <div class="outliers">
+    <p>The Outliers</p>
+  </div>
+
+
+
+
+
+  <!-- <footer>
+    <div class="footercontent">
+      <div class="border"></div>
+      <p style="margin : 2rem 0; width : 80%; position: absolute; left : 10%;">© IITAnalytics.org 2023
+      <p>
+    </div>
+  </footer> -->
+
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    var typed = new Typed('#para', {
+      strings: ['We are here to help you choose.', 'We are here to help you excel.', 'We are here to provide you insights.'],
+      smartBackspace: true,
+      backDelay: 1000,
+      typeSpeed: 20,
+      backSpeed: 20,
+      loop: true,
+      loopCount: Infinity,
+      showCursor: false
+    });
+  </script>
+
+  <script src="js/vanilla-tilt.js" type="text/javascript"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="http://d3js.org/topojson.v3.min.js"></script>
+    <!-- <script type="text/javascript" src="https://d3.geo.min.js"></script> -->
+</head>
+<style>
+    * {
+        margin: 0%;
+    }
+
+    svg {
+        background-color: #69aed5;
+    }
+
+    g {
+        fill: #a2eda3;
+    }
+
+    .iit-marker {
+        fill: #3f08a4;
+        stroke: #ffffff;
+        stroke-width: 2px;
+        transition: r 0.5s;
+    }
+
+    title {
+        color: white;
+        background-color: darkblue;
+    }
+</style>
+
+<body>
+    <svg width="1560" height="1000"></svg>
+
+    <script>
+
+        // Define the map projection
+        const projection = d3.geoMercator().center([82, 22]).scale(900).translate([480, 300]);
+
+        // Define the path generator
+        const path = d3.geoPath().projection(projection);
+
+        // Create an SVG element
+        const svg = d3.select("svg");
+
+        // Load the GeoJSON data for India
+        d3.json("states_india.json").then(function (india) {
+
+
+
+            // Draw the map
+            svg
+                .append("g")
+                .attr("class", "states")
+                .selectAll("path")
+                .data(india.features)
+                .enter()
+                .append("path")
+                .attr("d", path)
+                .style("fill", "#a2dea3;")
+                .style("stroke", "#222222")
+                .style("stroke-width", 0.5)
+                ;
+
+            // Define the IIT locations
+            const iits = [
+                { name: "IIT Bombay", lon: 72.9049, lat: 19.076, nirf: 3 },
+                { name: "IIT Delhi", lon: 77.2197, lat: 28.6328, nirf: 2 },
+                { name: "IIT Madras", lon: 80.2314, lat: 12.9908, nirf: 1 },
+                { name: "IIT Kanpur", lon: 80.2329, lat: 26.5095, nirf: 4 },
+                { name: "IIT Kharagpur", lon: 87.3215, lat: 22.3140, nirf: 5 },
+                { name: "IIT Guwahati", lon: 91.7529, lat: 26.1445, nirf: 7 },
+                { name: "IIT Roorkee", lon: 77.8910, lat: 29.8668, nirf: 6 },
+                { name: "IIT Hyderabad", lon: 78.3405, lat: 17.4947, nirf: 8 },
+                { name: "IIT Gandhinagar", lon: 72.5142, lat: 23.2156, nirf: 16 },
+                { name: "IIT Ropar", lon: 76.5862, lat: 30.9785, nirf: 9 },
+                { name: "IIT Patna", lon: 85.1499, lat: 25.5941, nirf: 23 },
+                { name: "IIT Bhubaneswar", lon: 85.8130, lat: 20.2961, nirf: 22 },
+                { name: "IIT Mandi", lon: 77.3149, lat: 31.7055, nirf: 12 },
+                { name: "IIT Jodhpur", lon: 73.0209, lat: 26.2389, nirf: 50 },
+                { name: "IIT Indore", lon: 75.8538, lat: 22.4991, nirf: 10 },
+                { name: "IIT Varanasi", lon: 83.0040, lat: 25.2677, nirf: 11 },
+                { name: "IIT Palakkad", lon: 76.6557, lat: 10.8327, nirf: 54 },
+                { name: "IIT Tirupati", lon: 79.1605, lat: 13.6311, nirf: 56 },
+                { name: "IIT Dhanbad", lon: 86.4220, lat: 23.8143, nirf: 15 },
+                { name: "IIT Bhilai", lon: 81.6882, lat: 21.1924, nirf: 51 },
+                { name: "IIT Goa", lon: 73.9224, lat: 15.2993, nirf: 30 },
+                { name: "IIT Jammu", lon: 74.8570, lat: 32.6782, nirf: 80 },
+                { name: "IIT Dharwad", lon: 75.0247, lat: 15.4775, nirf: 31 }
+            ];
+
+
+
+            // Draw markers for IIT locations
+            const markers = svg
+                .append("g")
+                .attr("class", "iits")
+                .selectAll("circle")
+                .data(iits)
+                .enter()
+                .append("circle")
+                .attr("class", "iit-marker")
+                .attr("cx", function (d) {
+                    return projection([d.lon, d.lat])[0];
+                })
+                .attr("cy", function (d) {
+                    return projection([d.lon, d.lat])[1];
+                })
+                .attr("r", 4)
+                .on("mouseover", function (d) {
+
+                    // Transition the marker size on hover
+                    d3.select(this)
+                        .transition()
+                        .duration(0.001)
+                        .attr("r", 6);
+                })
+                .on("mouseout", function () {
+
+                    // Transition the marker size on mouseout
+                    d3.select(this)
+                        .transition()
+                        .duration(0.001)
+                        .attr("r", 4);
+                })
+                .append("title")
+                .html(function (d) {
+                    return '<div style=" color: black; background-color: white;">' + d.name + '\n' + '<br>NIRF : ' + d.nirf + '</div>';
+                });
+
+
+
+        });
+    </script>
+
+
+</body>
+
+</html>

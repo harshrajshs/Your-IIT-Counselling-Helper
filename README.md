@@ -4,11 +4,14 @@ Your IIT Counselling Helper is a comprehensive tool designed to assist students 
 
 ![home](images/home.png)
 
-![Female Reservation Analysis](screenshots/female_reservation_analysis.png)
+![map](images/map.png)
 
 ## Features
 
 - **College and Branch Recommendations:** Get personalized recommendations based on your rank and category.
+  ![prediction](images/predict_search.png)
+  ![analysis1](images/an1.png)
+  ![analysis2](images/an2.png)
 - **Female Reservation Analysis:** Understand the impact of female reservation in different IITs and branches.
   
   ![Female Reservation Analysis](screenshots/female_reservation_analysis.png)

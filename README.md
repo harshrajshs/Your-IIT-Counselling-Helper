@@ -61,6 +61,21 @@ Your IIT Counselling Helper is a comprehensive tool designed to assist students 
     ```
    ![servers](images/server.png)
 
+4. Open phpmyadmin and upload all data
+   - Open phpMyAdmin by using link http://localhost
+   - create database with name 'josaa'
+   - Upload all sql files using import option
+5. Giving permissions and previllages
+   ```bash
+    GRANT ALL PRIVILEGES ON josaa.* TO 'harsh'@'localhost' IDENTIFIED BY 'harsh@123';
+    FLUSH PRIVILEGES;
+   ```
+6. Open website
+   ```bash
+    http://localhost:8080/josaa/web/index.php
+   ```
+   - Here 'josaa' is folder name in which web and databases folder will be there
+
 ## Usage
 
 1. Enter your rank and category on the homepage.

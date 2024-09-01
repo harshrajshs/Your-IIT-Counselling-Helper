@@ -53,7 +53,7 @@ Your IIT Counselling Helper is a comprehensive tool designed to assist students 
 
 2. Install the necessary dependencies:
     ```bash
-    xampp
+    https://www.apachefriends.org/download.html
     ```
 3. Start Apache web Server and Database services.
    ```bash

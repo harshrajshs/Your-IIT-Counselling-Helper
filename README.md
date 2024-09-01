@@ -2,13 +2,36 @@
 
 Your IIT Counselling Helper is a comprehensive tool designed to assist students in making informed decisions during the IIT counselling process. The website provides personalized college and branch recommendations based on the student's rank and category. It also includes various analyses, such as female reservation, old IITs vs. new IITs, and student flow using animations.
 
+![home](images/home.png)
+
+![Female Reservation Analysis](screenshots/female_reservation_analysis.png)
+
 ## Features
 
 - **College and Branch Recommendations:** Get personalized recommendations based on your rank and category.
 - **Female Reservation Analysis:** Understand the impact of female reservation in different IITs and branches.
+  
+  ![Female Reservation Analysis](screenshots/female_reservation_analysis.png)
+  
+  _Screenshot: Analysis of female reservation across different IITs and branches._
+
 - **Old IITs vs. New IITs:** Compare the pros and cons of old IITs versus new IITs.
+  
+  ![Old IITs vs. New IITs](screenshots/old_vs_new_iits.png)
+  
+  _Screenshot: Comparative analysis between old and new IITs._
+
 - **Student Flow Animation:** Visualize the flow of students across different branches and IITs through animations.
+  
+  ![Student Flow Animation](screenshots/student_flow_animation.png)
+  
+  _Screenshot: Animation showing the flow of students across branches._
+
 - **Outliers Analysis:** Identify and analyze outliers in rank vs. branch preferences.
+  
+  ![Outliers Analysis](screenshots/outliers_analysis.png)
+  
+  _Screenshot: Outliers detected in rank vs. branch preferences._
 
 ## Installation
 

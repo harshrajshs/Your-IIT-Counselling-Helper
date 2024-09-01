@@ -18,25 +18,28 @@ Your IIT Counselling Helper is a comprehensive tool designed to assist students 
   
 - **Female Reservation Analysis:** Understand the impact of female reservation in different IITs and branches.
   
-  ![Female Reservation Analysis](screenshots/female_reservation_analysis.png)
+  ![Female Reservation Analysis](images/mf3.png)
+  ![Female Reservation Analysis](images/an3.png)
   
   _Screenshot: Analysis of female reservation across different IITs and branches._
 
 - **Old IITs vs. New IITs:** Compare the pros and cons of old IITs versus new IITs.
   
-  ![Old IITs vs. New IITs](screenshots/old_vs_new_iits.png)
+  ![Old IITs vs. New IITs](images/nvso1.png)
+  ![Old IITs vs. New IITs](images/nvso2.png)
+  ![Old IITs vs. New IITs](images/nvsoa.png)
   
   _Screenshot: Comparative analysis between old and new IITs._
 
 - **Student Flow Animation:** Visualize the flow of students across different branches and IITs through animations.
   
-  ![Student Flow Animation](screenshots/student_flow_animation.png)
+  ![Student Flow Animation](images/flow.png)
   
   _Screenshot: Animation showing the flow of students across branches._
 
 - **Outliers Analysis:** Identify and analyze outliers in rank vs. branch preferences.
   
-  ![Outliers Analysis](screenshots/outliers_analysis.png)
+  ![Outliers Analysis](images/outlier.png)
   
   _Screenshot: Outliers detected in rank vs. branch preferences._
 
@@ -44,19 +47,19 @@ Your IIT Counselling Helper is a comprehensive tool designed to assist students 
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/your-iit-counselling-helper.git
+    git clone https://github.com/harshrajshs/Your-IIT-Counselling-Helper.git
     cd your-iit-counselling-helper
     ```
 
 2. Install the necessary dependencies:
     ```bash
-    npm install
+    xampp
     ```
-
-3. Start the development server:
-    ```bash
-    npm start
+3. Start Apache web Server and Database services.
+   ```bash
+    sudo ./xampp start
     ```
+   ![servers](images/server.png)
 
 ## Usage
 
@@ -68,8 +71,8 @@ Your IIT Counselling Helper is a comprehensive tool designed to assist students 
 ## Technologies Used
 
 - **Frontend:** HTML, CSS, JavaScript
-- **Backend:** Node.js, Express
-- **Database:** MongoDB
+- **Backend:** PHP, MySQL
+- **Database:** SQL
 - **Visualization:** D3.js, Chart.js
 - **Animations:** CSS Animations, JavaScript
 
@@ -77,13 +80,9 @@ Your IIT Counselling Helper is a comprehensive tool designed to assist students 
 
 Contributions are welcome! Please fork the repository and submit a pull request with your changes.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Contact
 
-If you have any questions or feedback, feel free to reach out at `your-email@example.com`.
+If you have any questions or feedback, feel free to reach out at `harsh.raj@iitg.ac.in`.
 
 ---
 

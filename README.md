@@ -9,9 +9,11 @@ Your IIT Counselling Helper is a comprehensive tool designed to assist students 
 ## Features
 
 - **College and Branch Recommendations:** Get personalized recommendations based on your rank and category.
-- 
+  
   ![prediction](images/predict_search.png)
+  
   ![analysis1](images/an1.png)
+  
   ![analysis2](images/an2.png)
 
   - Different Branch analysis according to provided rank and categoty.
@@ -19,6 +21,7 @@ Your IIT Counselling Helper is a comprehensive tool designed to assist students 
 - **Female Reservation Analysis:** Understand the impact of female reservation in different IITs and branches.
   
   ![Female Reservation Analysis](images/mf3.png)
+  
   ![Female Reservation Analysis](images/an3.png)
   
   _Screenshot: Analysis of female reservation across different IITs and branches._
@@ -26,7 +29,9 @@ Your IIT Counselling Helper is a comprehensive tool designed to assist students 
 - **Old IITs vs. New IITs:** Compare the pros and cons of old IITs versus new IITs.
   
   ![Old IITs vs. New IITs](images/nvso1.png)
+  
   ![Old IITs vs. New IITs](images/nvso2.png)
+  
   ![Old IITs vs. New IITs](images/nvsoa.png)
   
   _Screenshot: Comparative analysis between old and new IITs._
